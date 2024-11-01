@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material3.Icon
@@ -85,23 +87,46 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 //        )
 //    }
 
-    if(name.length > 5){ // adding conditional rendering of UI components
-        Icon(
-            imageVector = Icons.Default.AccountCircle,
-            contentDescription = null,
-            modifier = modifier
-                .size(100.dp)
-                .background(Color.White)
-        )
-    }
-    Column {
-        for(i in 1..5){ // if we want to repeat a component multiple times
+//    if(name.length > 5){ // adding conditional rendering of UI components
+//        Icon(
+//            imageVector = Icons.Default.AccountCircle,
+//            contentDescription = null,
+//            modifier = modifier
+//                .size(100.dp)
+//                .background(Color.White)
+//        )
+//    }
+//    Column {
+//        for(i in 1..5){ // if we want to repeat a component multiple times
+//            Image(
+//                painter = painterResource(id = R.drawable.ic_launcher_foreground),
+//                contentDescription = "Android Logo",
+//                modifier = modifier
+//                    .background(Color.Black)
+//
+//            )
+//        }
+//    }
+
+//    LazyColumn(
+//        modifier = modifier
+//    ){
+//        items(100){
+//            Text(
+//                text = "Item $it",
+//                modifier = modifier
+//                    .padding(16.dp)
+//            )
+//        }
+//    }
+
+    LazyRow {
+        items(100){
             Image(
                 painter = painterResource(id = R.drawable.ic_launcher_foreground),
                 contentDescription = "Android Logo",
                 modifier = modifier
                     .background(Color.Black)
-
             )
         }
     }
